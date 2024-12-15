@@ -18,7 +18,9 @@ struct MainTabView: View {
             }
             
             Tab(TabItem.Friends.tabName, systemImage: TabItem.Friends.tabImage, value: TabItem.Friends) {
-                Text("Friends")
+                NavigationStack {
+                    ExploreView()
+                }
             }
             
             Tab(TabItem.UploadPost.tabName, systemImage: TabItem.UploadPost.tabImage, value: TabItem.UploadPost) {
@@ -26,7 +28,9 @@ struct MainTabView: View {
             }
             
             Tab(TabItem.Inbox.tabName, systemImage: TabItem.Inbox.tabImage, value: TabItem.Inbox) {
-                Text("Inbox")
+                NavigationStack {
+                    NotificationsView()
+                }
             }
             
             Tab(TabItem.Profile.tabName, systemImage: TabItem.Profile.tabImage, value: TabItem.Profile) {

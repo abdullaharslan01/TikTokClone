@@ -22,6 +22,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F57C77B62D0EC422006A2065 /* Enums */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		F5E3511A2D0DFE91005B42C4 /* Explore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Explore;
@@ -158,6 +163,7 @@
 		F5E3510F2D0DFE69005B42C4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F57C77B62D0EC422006A2065 /* Enums */,
 				F5E351242D0DFEB8005B42C4 /* Components */,
 			);
 			path = Utils;
@@ -202,6 +208,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				F57C77B62D0EC422006A2065 /* Enums */,
 				F5E3511A2D0DFE91005B42C4 /* Explore */,
 				F5E3511D2D0DFE97005B42C4 /* Root */,
 				F5E3511E2D0DFE99005B42C4 /* Profile */,

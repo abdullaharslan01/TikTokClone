@@ -29,9 +29,7 @@ struct FeedCell: View {
 
                     VStack(spacing: 28) {
 
-                        Circle()
-                            .frame(width: 48, height: 48)
-                            .foregroundStyle(.gray)
+                        CircleImageView(imageUrl: "profile1", size: .m)
 
                         ActionButton(text: "27", symbolName: "heart.fill") {}
                         ActionButton(text: "27", symbolName: "ellipsis.bubble.fill") {}
