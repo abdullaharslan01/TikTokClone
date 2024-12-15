@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct FeedCell: View {
-    let post: Int
+    let post: Post
+    var player: AVPlayer
+    
+    init(post: Post, player: AVPlayer) {
+        self.post = post
+        self.player = player
+    }
+
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(Color(.systemPink))
+            CustomVideoPlayer(player: player)
                 .containerRelativeFrame([.horizontal, .vertical])
-                .overlay {
-                    Text("\(post)")
-                        .font(.headline)
-                        .foregroundStyle(.white)
-
-                }
+               
 
             VStack {
                 Spacer()
@@ -29,10 +31,10 @@ struct FeedCell: View {
 
                     VStack(spacing: 28) {
 
-                        CircleImageView(imageUrl: "profile1", size: .m)
+                        CircleImageView(imageUrl: "\(post.profileUrl)", size: .m)
 
-                        ActionButton(text: "27", symbolName: "heart.fill") {}
-                        ActionButton(text: "27", symbolName: "ellipsis.bubble.fill") {}
+                        ActionButton(text: "\(Int.random(in: 1...10000))", symbolName: "heart.fill") {}
+                        ActionButton(text: "\(Int.random(in: 1...10000))", symbolName: "ellipsis.bubble.fill") {}
                         
                         ActionButton(symbolName: "bookmark.fill")
                         
@@ -79,16 +81,12 @@ struct ActionButton: View {
 extension FeedCell {
     var titleView: some View {
         VStack(alignment: .leading) {
-            Text("Abdullah Arslan")
+            Text(post.userFullName)
                 .fontWeight(.semibold)
-            Text("Rocket ship prepare for takeoff!!!")
+            Text(post.subtitle)
         }.foregroundStyle(.white)
             .font(.subheadline)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-#Preview {
-    FeedCell(post: 2)
-
-}

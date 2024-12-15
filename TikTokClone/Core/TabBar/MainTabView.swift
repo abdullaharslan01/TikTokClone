@@ -34,7 +34,11 @@ struct MainTabView: View {
             }
             
             Tab(TabItem.Profile.tabName, systemImage: TabItem.Profile.tabImage, value: TabItem.Profile) {
-                Text("Profile")
+                NavigationStack {
+                    CurrentUserProfileView()
+                }
+                
+            
             }
           
         }.tint(Color(.label))
